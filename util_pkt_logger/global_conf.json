@@ -2,6 +2,8 @@
     "SX1301_conf": {
         "lorawan_public": true,
         "clksrc": 1, /* radio_1 provides clock to concentrator */
+	"com_type": "SPI",
+        "com_path": "/dev/spidev0.0",
         "radio_0": {
             "enable": true,
             "type": "SX1257",
@@ -17,16 +19,16 @@
             "tx_enable": false
         },
         "chan_multiSF_0": {
-            /* Lora MAC channel, 125kHz, all SF, 868.1 MHz */
+            /* Lora MAC channel, 125kHz, all SF, 868.1 (868.9) MHz */
             "enable": true,
             "radio": 1,
-            "if": -400000
+            "if": 400000
         },
         "chan_multiSF_1": {
-            /* Lora MAC channel, 125kHz, all SF, 868.3 MHz */
+            /* Lora MAC channel, 125kHz, all SF, 868.3 (868.7) MHz */
             "enable": true,
             "radio": 1,
-            "if": -200000
+            "if": 200000
         },
         "chan_multiSF_2": {
             /* Lora MAC channel, 125kHz, all SF, 868.5 MHz */
@@ -65,16 +67,16 @@
             "if": 400000
         },
         "chan_Lora_std": {
-            /* Lora MAC channel, 250kHz, SF7, 868.3 MHz */
-            "enable": true,
+            /* Lora MAC channel, 250kHz, SF7, 868.3 MHz (868.7 MHz) */
+            "enable": false,
             "radio": 1,
-            "if": -200000,
+            "if": 200000,
             "bandwidth": 250000,
             "spread_factor": 7
         },
         "chan_FSK": {
-            /* FSK 50kbps channel, 868.8 MHz */
-            "enable": true,
+            /* FSK 50kbps channel, 868.8 MHz (868.2 MHz) */
+            "enable": false,
             "radio": 1,
             "if": 300000,
             "bandwidth": 125000,
@@ -82,6 +84,7 @@
         }
     },
     "gateway_conf": {
-        "gateway_ID": "AA555A0000000000"
+        "gateway_ID": "2e76b17a0f712728"
     }
 }
+
